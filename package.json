@@ -1,0 +1,34 @@
+{
+  "name": "@rianbotha/js-doc-md",
+  "version": "1.0.0",
+  "description": "A markdown readme generator for Javascript.",
+  "main": "index.js",
+  "bin": {
+    "js-doc-md": "index.js"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rianbotha/js-doc-md.git"
+  },
+  "keywords": [
+    "javascript",
+    "readme",
+    "documentation-generation",
+    "props",
+    "markdown",
+    "table",
+    "generator"
+  ],
+  "author": "Rian Botha",
+  "license": "MIT",
+  "homepage": "https://github.com/rianbotha/js-doc-md#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "fast-glob": "^3.2.4",
+    "jsdoc-to-markdown": "^6.0.1",
+    "yargs": "^16.1.0"
+  }
+}
