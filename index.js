@@ -20,7 +20,7 @@ const root = argv._[1];
 const ignore = argv['ignore'] ? argv['ignore'].split(',') : [];
 const toConsole = argv['to-console'];
 const force = argv.force;
-const regex = /<!-- doc-md-start -->[\s\S]*<!-- doc-md-end -->/m;
+const regex = /<!-- js-doc-md-start -->[\s\S]*<!-- js-doc-md-end -->/m;
 
 const startTime = performance.now();
 

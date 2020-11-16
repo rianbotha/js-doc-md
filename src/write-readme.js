@@ -12,7 +12,7 @@ const writeReadme = (filename, root, toConsole, regex, force) => {
       .then((doc) => {
         if (toConsole) {
           console.log(chalk.gray(`Doc for ${filename}:`))
-          console.log('<!-- doc-md-start -->\n' + doc + '<!-- doc-md-end -->\n\n');
+          console.log('<!-- js-doc-md-start -->\n' + doc + '<!-- js-doc-md-end -->\n\n');
           resolve('Success');
         } else {
           try {
@@ -30,10 +30,10 @@ const writeReadme = (filename, root, toConsole, regex, force) => {
             if (readmeContent.match(regex)) {
               newContent = readmeContent.replace(
                 regex,
-                '<!-- doc-md-start -->\n' + doc + '<!-- doc-md-end -->'
+                '<!-- js-doc-md-start -->\n' + doc + '<!-- js-doc-md-end -->'
               );
             } else if (force || !fileExists) {
-              newContent = '<!-- doc-md-start -->\n' + doc + '<!-- doc-md-end -->';
+              newContent = '<!-- js-doc-md-start -->\n' + doc + '<!-- js-doc-md-end -->';
             }
 
             if (newContent) {
@@ -49,7 +49,7 @@ const writeReadme = (filename, root, toConsole, regex, force) => {
             } else {
               console.warn(
                 chalk.yellow(`Could not find content to replace in ${readme}`),
-                '\nThe documentation needs to be wrapped between <!-- doc-md-start --> and <!-- doc-md-end -->',
+                '\nThe documentation needs to be wrapped between <!-- js-doc-md-start --> and <!-- js-doc-md-end -->',
                 '\nor use with --force to overwrite the file'
               );
               reject('Warning');

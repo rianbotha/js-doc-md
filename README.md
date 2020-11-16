@@ -25,7 +25,7 @@ The second argument is the base path from which the import path will be calculat
 
 If the file is named index.js the readme.md will be name readme.md. Otherwise the readme will be name filename.md to match your file.
 
-Existing documentation needs to be wrapped between `<!-- doc-md-start -->` and `<!-- doc-md-end -->` for the replacement to work. Only content between these comments will be replaced. This allows you to manually extend readmes without worrying about it being overwritten in future.
+Existing documentation needs to be wrapped between `<!-- js-doc-md-start -->` and `<!-- js-doc-md-end -->` for the replacement to work. Only content between these comments will be replaced. This allows you to manually extend readmes without worrying about it being overwritten in future.
 
 ### Options
 
