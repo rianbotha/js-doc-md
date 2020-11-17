@@ -35,7 +35,7 @@ stream.once('error', console.log);
 stream.once('end', () => {
   Promise.all(entries.map(filename =>
     writeReadme(filename, root, toConsole, regex, force)
-      .then(() => success.push(filename))
+      .then((result) => result === 'Ignored' ? warnings.push(filename) : success.push(filename))
       .catch((e) => {
         if (e !== 'Warning') {
           errors.push(filename);
