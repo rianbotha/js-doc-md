@@ -3,12 +3,21 @@ const path = require('path');
 const chalk = require('chalk');
 const jsdoc2md = require('jsdoc-to-markdown');
 
+const anchorNameLower = path.resolve(__dirname, './helpers/anchor-name-lower.js');
+const headerTemplate = path.resolve(__dirname, './partial/header.hbs');
+
 const writeReadme = (filename, root, toConsole, regex, force) => {
   return new Promise((resolve, reject) => {
     const basename = path.parse(filename).name;
     const readme = `${path.dirname(filename)}/${basename === 'index' ? 'readme' : basename}.md`;
+    let doc;
 
-    const doc = jsdoc2md.renderSync({ files: filename });
+    try {
+      doc = jsdoc2md.renderSync({ files: filename, 'global-index-format': 'grouped', helper: [anchorNameLower], partial: [headerTemplate] });
+    } catch (e) {
+      reject('Error');
+      return;
+    }
 
     if(doc) {
       if (toConsole) {
