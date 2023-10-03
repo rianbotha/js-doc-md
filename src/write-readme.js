@@ -1,12 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const chalk = require('chalk');
-const jsdoc2md = require('jsdoc-to-markdown');
+import fs from 'fs';
+import path from 'path';
+import chalk from 'chalk';
+import jsdoc2md from 'jsdoc-to-markdown';
+import { anchorNameLower } from './helpers/anchor-name-lower.js';
 
-const anchorNameLower = path.resolve(__dirname, './helpers/anchor-name-lower.js');
-const headerTemplate = path.resolve(__dirname, './partial/header.hbs');
+const headerTemplate = path.resolve('./partial/header.hbs');
 
-const writeReadme = (filename, root, toConsole, regex, force) => {
+export const writeReadme = (filename, root, toConsole, regex, force) => {
   return new Promise((resolve, reject) => {
     const basename = path.parse(filename).name;
     const readme = `${path.dirname(filename)}/${basename === 'index' ? 'readme' : basename}.md`;
@@ -74,5 +74,3 @@ const writeReadme = (filename, root, toConsole, regex, force) => {
     }
   });
 };
-
-module.exports = writeReadme;

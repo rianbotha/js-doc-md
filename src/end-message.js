@@ -1,7 +1,7 @@
-const { performance } = require('perf_hooks');
-const chalk = require('chalk');
+import { performance } from 'perf_hooks';
+import chalk from 'chalk';
 
-const endMessage = (startTime, entryLength, success, errors = [], warnings = []) => {
+export const endMessage = (startTime, entryLength, success, errors = [], warnings = []) => {
   const successLength = success.length;
   const errorsLength = errors.length;
   const warningsLength = warnings.length;
@@ -31,5 +31,3 @@ const endMessage = (startTime, entryLength, success, errors = [], warnings = [])
     chalk.gray(`${entryLength} file${entryLength === 1 ? '' : 's'} parsed in ${+(elapsed/1000).toFixed(2)}s`),
   );
 };
-
-module.exports = endMessage;
