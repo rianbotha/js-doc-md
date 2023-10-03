@@ -1,10 +1,10 @@
-var util = require('util');
+import util from 'util';
 
-exports.anchorNameLower = function anchorName(options) {
+export const anchorNameLower = function anchorName(options) {
   if (!this.id) throw new Error('[anchorName helper] cannot create a link without a id: ' + JSON.stringify(this))
   if (this.inherited) {
     options.hash.id = this.inherits
-    var inherits = _identifier(options)
+    const inherits = _identifier(options)
     if (inherits) {
       return anchorName.call(inherits, options)
     } else {

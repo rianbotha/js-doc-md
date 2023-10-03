@@ -1,10 +1,12 @@
 #!/usr/bin/env node
-const { performance } = require('perf_hooks');
-const path = require('path');
-const fg = require('fast-glob');
-const writeReadme = require('./src/write-readme');
-const endMessage = require('./src/end-message');
-const argv = require('yargs')
+import { performance } from 'perf_hooks';
+import fg from 'fast-glob';
+import { writeReadme } from './src/write-readme.js';
+import { endMessage } from './src/end-message.js';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
+const argv = yargs(hideBin(process.argv))
   .usage('Usage: $0 <filename or glob> <root> [options]\nGlob can be a comma separated list. Glob needs to be wrapped in quotes.')
   .boolean(['to-console', 'force'])
   .describe('ignore', 'A filename or glob to exclude. You can comma separate a list. Make sure to wrap globs in quotes.')
