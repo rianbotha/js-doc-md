@@ -1,6 +1,6 @@
 {
   "name": "@rianbotha/js-doc-md",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A markdown readme generator for Javascript.",
   "exports": "./index.js",
   "bin": {
