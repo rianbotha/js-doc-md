@@ -1,10 +1,13 @@
 import fs from 'fs';
-import path from 'path';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import chalk from 'chalk';
 import jsdoc2md from 'jsdoc-to-markdown';
-import { anchorNameLower } from './helpers/anchor-name-lower.js';
 
-const headerTemplate = path.resolve('./partial/header.hbs');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const anchorNameLower = path.resolve(__dirname, './helpers/anchor-name-lower.cjs');
+const headerTemplate = path.resolve(__dirname, './partial/header.hbs');
 
 export const writeReadme = (filename, root, toConsole, regex, force) => {
   return new Promise((resolve, reject) => {

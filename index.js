@@ -1,4 +1,5 @@
-#!/usr/bin/env node
+#!/usr/bin/env node  
+
 import { performance } from 'perf_hooks';
 import fg from 'fast-glob';
 import { writeReadme } from './src/write-readme.js';

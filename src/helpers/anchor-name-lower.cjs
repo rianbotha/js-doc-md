@@ -1,10 +1,11 @@
-import util from 'util';
+// .cjs is required for use with 'jsdoc-to-markdown'
+var util = require('util');
 
-export const anchorNameLower = function anchorName(options) {
+exports.anchorNameLower = function anchorName(options) {
   if (!this.id) throw new Error('[anchorName helper] cannot create a link without a id: ' + JSON.stringify(this))
   if (this.inherited) {
     options.hash.id = this.inherits
-    const inherits = _identifier(options)
+    var inherits = _identifier(options)
     if (inherits) {
       return anchorName.call(inherits, options)
     } else {
