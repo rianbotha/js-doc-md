@@ -27,7 +27,7 @@
   "homepage": "https://github.com/rianbotha/js-doc-md#readme",
   "dependencies": {
     "chalk": "^5.3.0",
-    "fast-glob": "^3.3.1",
+    "fast-glob": "^3.3.3",
     "jsdoc-to-markdown": "^8.0.0",
     "yargs": "^17.7.2"
   },
